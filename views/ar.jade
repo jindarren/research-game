@@ -1,0 +1,34 @@
+﻿doctype html
+html(lang='zh')
+  head
+    meta(name='viewport', content='width=device-width,user-scalable=no')
+    meta(charset='utf-8')
+    title 为了不加班，西二旗某公司员工竟然和老板XXX
+    script.
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7d5cdb465e51a3861bb1d0bf6599f1ad";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+  body(onload='init()')
+    audio.media-audio#bg-audio(src="http://research-h5.lenovo.com/researchgame/_assets/art/audio/research.mp3" preload)
+    .content
+      canvas.game-board#loadCanvas
+      canvas.game-board#playCanvas
+    link(rel='stylesheet', type='text/css', href='index.css')
+    script(src='jquery-3.1.1.min.js')
+    script(src='preloadjs-next.min.js')
+    script(src='easeljs-next.min.js')
+    script(src='tweenjs-next.min.js')
+    script(src='soundjs-next.min.js')
+    script(src='http://res.wx.qq.com/open/js/jweixin-1.2.0.js')
+    script.
+      var audio = document.getElementById("bg-audio");
+      document.addEventListener("WeixinJSBridgeReady", function () {
+        setTimeout(function(){
+          audio.play();
+        },1000)
+      }, false);
+    script(src='gogo-game.js')

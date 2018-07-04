@@ -1,0 +1,95 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Stats
+    style(type='text/css').
+      body{
+      padding: 50px;
+      }
+      h5{
+      padding-top: 20px;
+      padding-bottom: 20px;
+      }
+      p{
+      padding-top:15px;
+      }
+  body
+    h2 《是设计师就撑100秒》游戏玩家数据分析
+    p
+      | 数据记录整个时间段，从
+      span#start
+      | 到
+      span#end
+      | 。一共有
+      span#num-total
+      | 次有效记录成绩。其中
+      span#num-designer
+      | 次来自设计师，
+      span#num-nondesigner
+      | 次来自非设计师，
+      span#num-other
+      | 次来自其他玩家。
+    a(href='report.pdf', target='_blank') 来自百度统计的数据报告
+    h5 分数统计
+    p 整个游戏玩家最高分数为6260，可以看出整体上不同游戏玩家群体的分数近似。
+    table(border='1')
+      tr
+        th 组别
+        th 最高分
+        th 平均分
+        th 分数中位数
+        th 分数标准差
+      tr#score-design
+        td 设计师
+        td
+        td
+        td
+        td
+      tr#score-nondesign
+        td 非设计师
+        td
+        td
+        td
+        td
+      tr#score-others
+        td 其他玩家
+        td
+        td
+        td
+        td
+    p
+      | 下图描述了不同玩家群体的在各个分数段的占比，通过分析可以看出，设计师整体成绩好于非设计师。但是在高分分数段（900-1200），非设计师和其他用户的占比均高于设计师群体。注：点击下图的图例可以过滤玩家
+    .row
+      .col-md-11
+        canvas#score-chart
+    h5 游戏时段
+    p
+      | 下图描述了在各个时间段不同玩家群体的数量占比，通过分析可以看出，早上8：00到10：00为玩家的高峰。但是在19：00之后，非设计和其他玩家的数量占比明显高于设计师群体。
+    .row
+      .col-md-11
+        canvas#time-chart
+    h5 网络类型
+    p
+      | 下图描述了不同玩家群体使用网络类型的数量占比，通过分析可以看出，对用所有的群体Wi-Fi都为主要的使用网络类型。其次是3G网络，4G网络使用占比最高的群体为非设计师。
+    .row
+      .col-md-4
+        canvas#network-chart-ch1
+      .col-md-4
+        canvas#network-chart-ch2
+      .col-md-4
+        canvas#network-chart-ch3
+    h5 手机类型
+    p
+      | 从下图可以清楚的看出来，玩家使用手机的类型可谓五花八门，一共整理到接近30个手机的品牌。在各个玩家群体Apple都是使用最多的手机，比其他所有设备加起来的数量还要多。接下来依次是huawei在第二梯队。小米,OPPO,VIVO数量齐平在第三梯队。
+    p 最受设计师玩家青睐的5个品牌依次是Apple, Huawei, VIVO, Xiaomi, Meizu
+    p 最受非设计师玩家青睐的5个品牌依次是Apple, Huawei, OPPO, Xiaomi, VIVO
+    p 最受其他玩家青睐的5个品牌依次是Apple, Huawei, Xiaomi, OPPO, Meizu
+    p 对于所关心的联想旗下的3个品牌，从玩家数量来看算不上是主流品牌。整体上看这三个品牌最受欢迎的依次是ZUK, Lenovo, MOTO
+    .row
+      .col-md-12
+        canvas#device-chart
+    link(href='https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css', rel='stylesheet')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js')
+    script(src='stat.js')
