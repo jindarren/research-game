@@ -1,4 +1,4 @@
-# wechat-sdk-demo
-基于nodejs的微信jssdk简单应用
+# Lenovo research game
+A fun game was developed by create.js game engine. 
 
-description: http://www.cnblogs.com/albin-gecker/p/4628355.html
+Link: http://research-h5.lenovo.com/researchgame/ar
